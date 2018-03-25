@@ -40,7 +40,8 @@ Pass
         //float r = abs(sin(2 * PI * _Time.y / 2.0));
         float r = 0.2;
         float d1 = roundBox(repeat(pos, float3(6, 6, 6)), 1, r);
-        float d2 = sphere(pos, 3.0);
+        //float d2 = sphere(pos, 3.0);
+		float d2 = torus(pos, 2.0*sin(_Time.y)+2.2);
         float d3 = floor(pos - float3(0, -3, 0));
         return smoothMin(smoothMin(d1, d2, 1.0), d3, 1.0);
     }

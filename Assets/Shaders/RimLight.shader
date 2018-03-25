@@ -1,4 +1,6 @@
-﻿Shader "Hidden/Image Effects/RimLight" 
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Hidden/Image Effects/RimLight" 
 {
 
 Properties
@@ -51,7 +53,7 @@ struct FragmentShaderOut
 Vert2Frag vert(VertexShaderIn v)
 {
     Vert2Frag o;
-    o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+    o.vertex = UnityObjectToClipPos(v.vertex);
     o.screenPos = ComputeScreenPos(o.vertex);
     return o;
 }

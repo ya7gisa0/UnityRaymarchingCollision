@@ -12,7 +12,7 @@ float RecursiveTetrahedron(float3 p)
 	const float3 a3 = float3( 1.0, -1.0, -1.0);
 	const float3 a4 = float3(-1.0,  1.0, -1.0);
 
-    const float scale = 2.0;
+	const float scale = 2.0;// 2.0;
     float d;
     for (int n = 0; n < 20; ++n) {
         float3 c = a1; 
